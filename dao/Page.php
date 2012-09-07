@@ -379,7 +379,7 @@ class Page{
 			Pages.SiteId, Pages.CreatedBy, 
 			Pages.LastModifiedBy, Pages.Created, Pages.LastModifiedDate, 
 			Pages.IsActive, Pages.ImageFileId, Pages.PageTypeId,
-			Users.FirstName, Users.LastName, Categories.Name AS CategoryName
+			Users.FirstName, Users.LastName
 			FROM Pages, Users ";
 		$sql = $sql."WHERE Pages.IsActive=1 AND "; 
 

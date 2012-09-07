@@ -74,10 +74,6 @@
 
 			$name = $row['FirstName'].' '.$row['LastName'];
 			
-			// get category
-			$categoryUniqId = '-1';
-			$categoryName = $row['CategoryName'];
-			
 			// get image url
 			$thumbUrl = '';
 			$imageUrl = '';
@@ -87,7 +83,6 @@
 				$file = File::GetByFileId($page->ImageFileId);
 				
 				$imageUrl = 'files/'.$file->UniqueName;
-				$mImageUrl = 'm/files/'.$file->UniqueName;
 				$thumbUrl = 'files/t-'.$file->UniqueName;
 			}
 			
@@ -97,11 +92,8 @@
 				    'PageUniqId'  => $page->PageUniqId,
 					'Name' => $page->Name,
 					'Description' => $page->Description,
-					'Location' => $page->Location,
 					'Callout' => $page->Callout,
 					'Url' => $url,
-					'CategoryUniqId' => $categoryUniqId,
-					'CategoryName' => $categoryName,
 					'Image' => $imageUrl,
 					'MobileImage' => $mImageUrl,
 					'Thumb' => $thumbUrl,
@@ -110,7 +102,11 @@
 				);
 				
 			if($display=='blog'){
-				$item['Content'] = htmlentities(Generator::ParseBlogHTML($siteUniqId, $page->PageUniqId, $page->Content, $rootloc));
+				$fragment = 'sites/'.$site->FriendlyId.'/fragments/publish/'.$page->PageUniqId.'.html';
+				$content = file_get_contents($fragment);
+				$content = str_replace('sites/'.$site->FriendlyId.'/', $rootloc, $content);
+
+				$item['Content'] = $content;
 			}
 				
 			$pages[$page->PageUniqId] = $item;
