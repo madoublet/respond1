@@ -121,7 +121,7 @@ class Create extends Actions
 			$content = file_get_contents($filename);
 		}
 		
-		$aboutUs = Page::Add('About', $description, $content, 'content', 'content',
+		$aboutUs = Page::Add('About', $description, 'content', 'content',
 			$pageType->PageTypeId, $site->SiteId, $user->UserId, $user->UserId,
 			1, -1);
 		$aboutUs->EditFriendlyId('about');
@@ -137,7 +137,7 @@ class Create extends Actions
 			$content = file_get_contents($filename);
 		}
 		
-		$contactUs = Page::Add('Contact', $description, $content, 'content', 'content',
+		$contactUs = Page::Add('Contact', $description, 'content', 'content',
 			$pageType->PageTypeId, $site->SiteId, $user->UserId, $user->UserId,
 			1, -1);
 		$contactUs->EditFriendlyId('contact');
