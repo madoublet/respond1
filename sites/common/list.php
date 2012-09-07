@@ -27,7 +27,7 @@
   $l_html = '';
 
   if($isAjax==false){ // do not create a div for ajax
-    $l_html = '<div id="'.$listid.'" class="list';
+    $l_html = '<div id="'.$listid.'" class="list">';
   }
     
   $lastcat = '';
