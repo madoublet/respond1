@@ -1,0 +1,17 @@
+div.listItem .btn{
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+div.listItem .reset{
+	display: none;
+}
+
+div.listItem.active .apply{
+  display: none;
+}
+
+div.listItem.active .reset{
+  display: inline-block;
+}

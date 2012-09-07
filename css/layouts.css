@@ -1,0 +1,43 @@
+/* begin layout */
+
+textarea{
+  margin: 0 2%;
+  width: 95%; 
+  height: 400px;
+}
+
+#layoutMenu{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+ul.nav li.custom{
+  position: relative
+}
+
+ul.nav li.custom a{
+  display: inline-block !important;
+  padding-right: 35px;
+}
+
+ul.nav li.custom a.remove{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #f0f0f0 url('../images/app-sprite.png') no-repeat -25px 0;
+  display: inline-block !important;
+  width: 25px !important;
+  height: 25px !important;
+  border: 1px solid red;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+ul.nav li.custom.active a.remove{
+  background-color: transparent;
+}
+
+ul.nav li.custom a.remove:hover{ 
+  background-color: #5a2025;
+}

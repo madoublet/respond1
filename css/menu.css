@@ -1,0 +1,154 @@
+header{
+	top: 0;
+	left: 0;
+	background: #444;
+	z-index: 1000;
+	margin: 0;
+	padding: 0;
+	background: url('../images/header-bg.png');
+}
+
+header img.logo{
+	position: absolute;
+	top: 9px;
+	left: 20px;
+}
+
+header ul.menu{
+  margin: 0 0 0 20px;
+  padding: 0 0 0 75px;
+  height: 50px;
+  list-style: none;
+}
+
+header ul.menu li{
+  margin: 0;
+  padding: 0;
+  float: left;
+  overflow: visible;
+}
+
+header ul.menu li a{
+  display: inline-block;
+  height: 47px;
+  line-height: 47px;
+  margin: 0;
+  padding: 0 18px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  border-bottom: 3px solid transparent;
+}
+
+header ul.menu li.selected{
+  height: 48px;
+}
+
+header ul.menu li.selected a{
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 3px solid #e67f11;
+}
+
+header ul.menu-secondary{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  background-color: rgba(255, 255, 255, .1);
+  height: 30px;
+  margin: 0;
+  padding: 0 10px;
+  border-radius: 3px;
+}
+
+header ul.menu.menu-secondary li{
+  margin: 0;
+  padding: 0;
+}
+
+header ul.menu.menu-secondary li a{
+  font-size: 11px;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+}
+
+header ul.menu.menu-secondary li.selected a{
+  border-bottom: 0;
+}
+
+span.demo-mode{
+  position: absolute;
+  top: 10px;
+  right: 165px;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  background: #e67f11;
+  border-radius: 3px;
+  color: #fff;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+footer{
+	display: none;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+
+	header{
+		height: 50px;
+		padding: 0 20px;
+	}
+
+  	header img.logo{
+	  position: static;
+	  margin-top: 9px;
+  	}
+
+	header ul.menu{
+		display: none;
+	}
+
+	span.demo-mode{
+		right: 20px;
+	}
+
+	/* footer */
+	footer{
+		display: block;
+		margin: 0;
+	}
+
+	footer ul.menu, footer ul.menu li{
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	footer ul.menu li a{
+		display: block;
+		background-color: #373f4a;
+		border-bottom: 1px solid #627085;
+		color: #fff;
+		padding: 15px 20px;
+	}
+
+	footer ul.menu li.selected a{
+	  font-weight: bold;
+	  color: #fff;
+	  background-color: #627085;
+	}
+
+}
+
+@media (max-width: 979px){
+
+	header{
+		margin: 0 ;
+	}
+}
+

@@ -1,0 +1,4 @@
+Options +FollowSymLinks 
+RewriteEngine On
+RewriteRule ^c/([^/\.]+)/?$ index.php?s=$1 [L]
+RewriteRule ^c/([^/\.]+)/registration?$ registration.php?s=$1 [L]

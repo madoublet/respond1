@@ -1,0 +1,109 @@
+/* begin immersive dialog */
+div.immersive{
+	position: absolute; 
+	z-index: 50000;
+	display: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.immersive-actions{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #fbec5d;
+	z-index: 5000020;
+	padding: 5px 0;
+	text-align: center;
+	display: none;
+}
+
+div.immersive-actions div{
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+div.immersive-actions input{
+	margin-left: 10px;
+}
+
+div.immersive-actions span{
+	margin-left: 5px;
+}
+
+/* begin crop styles */
+div.cropContainer{
+	text-align: center;
+	width: auto;
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+}
+
+/* dimensions */
+div#crop-dimensions{
+	position: absolute;
+	right: 0;
+	top: 85px;
+	width: 250px;
+	padding: 0 10px 10px 10px;
+	color: #ccc;
+	font-size: 11px;
+	text-align: right;
+}
+
+/* begin overlay */
+div#overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #404040;
+  width: 100%;
+  height: 100%;
+  display: none;
+  -moz-opacity:.90; 
+  filter:alpha(opacity=90); 
+  opacity:.90; 
+  display: none;
+  z-index: 4999;
+}
+
+/* slider */
+div#slider-container{
+	position: absolute;
+	right: 0;
+	top: 50px;
+	width: 250px;
+	background: rgba(0, 0, 0, 0.3);
+	padding: 10px;
+}
+
+div#slider{
+	width: 200px;
+	overflow: visible;
+	display: inline-block;
+}
+
+div#slider a.ui-slider-handle{
+	background: #ccc;
+	border: 1px solid #aaa;
+	cursor: e-resize;
+}
+
+div#slider a.ui-slider-handle.ui-state-hover{
+	background: #f0f0f0;
+	border: 1px solid #aaa;
+}
+
+div#slider-display{
+	display: inline-block;
+	width: 40px;
+	margin-left: 5px;
+	color: #fff;
+	text-align: right;
+}
+

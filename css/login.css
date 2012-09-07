@@ -1,0 +1,68 @@
+body{
+	background-color: #373f4a;
+}
+
+div.content{
+	text-align: center;
+	color: #fff;
+	padding-top: 100px;
+}
+
+#create-confirmation{
+	display: none;
+}
+
+div.content h1{
+	font-size: 30px;
+	padding-bottom: 50px;
+}
+
+fieldset{
+	text-align: center;
+	border-bottom: none;
+}
+
+div.control-group{
+	margin: 25px 0 !important;
+}
+
+span.actions{
+	display: block;
+	text-align: right;
+	padding-right: 9%;
+}
+
+label{
+	display: none;
+}
+
+input[type=text], input[type=password]{
+	width: 80%;
+	height: 25px;
+	line-height: 24px;
+	font-size: 15px;
+	padding: 5px;
+}
+
+p{
+	text-align: center;
+}
+
+p.demo{
+	color: #ccc;
+	margin-bottom: 50px;
+}
+
+p.demo b{
+	display: inline-block;
+	color: #fff;
+	font-weight: normal;
+	padding: 5px 8px;
+	border-radius: 4px;
+ 	background-color: rgba(255, 255, 255, .1);
+}
+
+p.footer{
+	margin: 100px auto;
+	text-align: center;
+}

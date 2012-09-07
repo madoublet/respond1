@@ -1,0 +1,11 @@
+Options +FollowSymLinks 
+RewriteEngine On
+
+ErrorDocument 400 /page/error
+ErrorDocument 401 /page/error
+ErrorDocument 403 /page/error
+ErrorDocument 404 /page/error
+ErrorDocument 500 /page/error
+
+RewriteRule ^([a-z0-9-]+)/([a-z0-9\-]+)$ /$1/$2test.php [L]
+RewriteRule ^m/([a-z0-9-]+)/([a-z0-9\-]+)$ m/$1/$2.php [L]

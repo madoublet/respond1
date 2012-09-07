@@ -1,0 +1,190 @@
+/* begin list */
+div.list{
+  margin-top: -10px;
+}
+
+div.listItem{
+  position: relative;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+  margin: 0;
+}
+
+div.listItem:last-child{
+  border-bottom: none;
+}
+
+div.listItem h2{
+  line-height: 1em;
+  margin: 0;
+  padding: 0 0 5px 0;
+  font-size: 15px;
+  font-weight: bold;
+  width: 80%;
+  color: #888;
+  background: none;
+  border: none;
+}
+
+div.listItem p{
+  width: 80%;
+  margin: 0;
+  padding: 0 0 2px 0;
+}
+
+div.listItem p.lastUpdated, div.listItem em{
+  color: #aaa;
+  font-size: 0.85em;
+  font-style: normal;
+}
+
+
+div.placeholder{
+  height: 40px;
+  border: 1px solid #fbec5d !important;
+  background: #fbec5d !important;
+} 
+
+div.listItem.sortable{
+  padding-left: 40px;
+}
+
+/* action buttons */
+div.listItem a.remove{
+  background: #f0f0f0 url('../images/app-sprite.png') no-repeat -25px 0;
+  display: inline-block !important;
+  width: 25px !important;
+  height: 25px !important;
+}
+
+div.listItem a.remove:hover{ 
+  background-color: #B11623;
+}
+
+div.listItem span.hook{
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: block;
+  width: 25px !important;
+  height: 25px !important;
+  background: #f0f0f0 url('../images/app-sprite.png') no-repeat -75px 0;
+}
+
+div.listItem span.hook:hover{
+  cursor: n-resize;
+  background: #f0f0f0 url('../images/app-sprite.png') no-repeat -100px 0;
+}
+
+div.listItem.hasImage{
+  min-height: 80px;
+}
+
+div.listItem.hasImage h2, div.listItem.hasImage p, div.listItem.hasImage em{
+  margin-left: 90px;
+}
+
+div.listItem span.image{
+  position: absolute;
+  top: 15px;
+  left: 0;
+} 
+
+div.listItem span.image img{
+  border: 2px solid #f0f0f0;
+}
+
+div.listItem span.icon{
+  position: absolute;
+  top: 15px;
+  left: 60px;
+}
+
+div#pageFileList div.listItem span.icon{
+  left: 15px;
+}
+
+div.list a.remove{
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+div.list a.moveUp{
+  position: absolute;
+  top: 15px;
+  right: 65px;
+}
+
+div.list a.moveDown{
+  position: absolute;
+  top: 15px;
+  right: 40px;
+}
+
+div.list div:first-child a.moveUp{
+  display: none !important;
+}
+
+div.list div:last-child a.moveDown{
+  display: none !important;
+}
+
+p#noItems{
+  margin: 10px;
+  color: #606060;
+  font-style: italic;
+}
+
+div.listItem a.switchSite{
+  position: absolute;
+  top: 15px;
+  right: 15px;  
+  display: block;
+  width: 20px;
+  height: 50px;
+  border: 1px solid #ccc;
+}
+
+div.listItem a.switchSite.selected{
+  background: #fbec5d;
+}
+
+div.listItem p.size{
+  font-size: 12px;
+  color: #888;
+  line-height: 17px;
+}
+
+
+/* begin images */
+div#imageList div.listItem span.field{
+  margin-left: 10px;
+}
+
+div#imageList div.listItem span.field input{
+  width: 300px;
+}
+
+div#imageList div.listItem img{
+  margin-bottom: 10px;
+}
+
+/* begin pagesList */
+div#pagesList span.status{
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  color: #aaa;
+  text-align: right;
+  cursor: pointer;
+  padding: 0;
+  height: 15px;
+  line-height: 15px;
+  width: 15px;
+  background: url('../images/app-sprite.png') no-repeat -170px -4px;
+}
+
+div#pagesList span.status.published{
+  background: url('../images/app-sprite.png') no-repeat -190px -4px;
+}

@@ -1,0 +1,59 @@
+div.container-fluid{
+	margin: 0;
+	padding: 0;
+}
+
+div.header-row{
+	margin: 0 0 20px 0;
+	padding: 0;
+	background: url('../images/grid.png') repeat 0 0;
+}
+
+div.header-row .nav{
+	margin-bottom: 0;
+	margin-left: 20px;
+}
+
+div.header-row .nav{
+	border-bottom: 1px solid transparent;
+}
+
+div.header-row .nav li{
+	font-size: 12px;
+}
+
+div.header-row .nav li a{
+  padding: 7px 30px;
+  letter-spacing: 1.2px;
+  color: #3f4858;
+}
+
+div.header-row h1{
+	font-weight: normal !important;
+ 	color: #fff;
+ 	font-size: 20px;
+ 	padding: 7px 0 7px 0;
+ 	margin: 0 20px;
+ 	letter-spacing: 2px;
+}
+
+div.list{
+	margin: 20px;
+}
+
+p.noResults{
+	margin: 0 20px;
+	color: #888;
+}
+
+.form-horizontal{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+	div.header-row .nav li a{
+	  padding: 7px 10px;
+	}
+}

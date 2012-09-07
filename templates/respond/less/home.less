@@ -1,0 +1,108 @@
+/* import global styles */
+@import url("global.css");
+
+.container-fluid {
+  padding-right: 0 !important; 
+  padding-left: 0 !important;
+}
+
+h1{
+  font-size: 2.4em !important;
+  line-height: 1.2em !important;
+  margin-bottom: 25px !important;
+  font-weight: normal !important;
+  letter-spacing: 1.25px;
+}
+
+h2{
+  font-size: 2.0em !important;
+  font-weight: normal !important;
+  letter-spacing: 1.2px;
+}
+
+h3{
+  font-size: 2.0em !important;
+  line-height: 1.2em !important;
+  font-weight: normal !important;
+  text-align: center;
+  letter-spacing: 1.2px;
+}
+
+p{
+  font-size: 1.2em !important;
+  line-height: 1.7em !important;
+  color: #aaa;
+}
+
+b{
+  color: #3690ae !important;
+}
+
+div.o-image{
+  text-align: center;
+}
+
+input[type=image]{
+  width: auto;
+  height: auto;
+}
+
+/* callout */
+div#callout{
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background: url('../images/grid.png') repeat;
+}
+
+div#callout div.col:first-child{
+  padding-top: 5px;
+}
+
+div#callout h1{
+  color: #fff !important;
+  padding: 0 0 0 20px;
+}
+
+div#callout p{
+  padding: 0 0 20px 20px;
+}
+
+div#callout p a.btn{
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+div#callout div.o-image{
+  padding-right: 20px;
+}
+
+/* features */
+div#features{
+  padding: 10px 20px 0 20px;
+  box-sizing: border-box;
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {  }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {  
+  
+  .o-image{
+    padding-left: 20px;
+  }
+
+  div#callout p a.btn{
+    display: block;
+    box-sizing: border-box;
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
+
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {  }
+ 
+/* Large desktop */
+@media (min-width: 1200px) {  }

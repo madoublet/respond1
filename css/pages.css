@@ -1,0 +1,33 @@
+span.status{
+  font-style: normal;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #aaa;
+  text-align: center;
+  cursor: pointer;
+  height: 23px;
+  line-height: 23px;
+  width: 125px;
+}
+
+span.status:hover{
+  background: #f8f8f8;
+}
+span.status.published{
+  color: #7ec57e;
+}
+
+span.status span.status-img{
+  display: inline-block;
+  margin-bottom: -3px;
+  margin-right: 2px;
+  width: 14px;
+  height: 14px;
+  background: url('../images/app-sprite.png') no-repeat -190px -4px;
+  cursor: pointer;
+}
+
+span.status.not-published span.status-img{
+  background: url('../images/app-sprite.png') no-repeat -170px -4px;
+}
