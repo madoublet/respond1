@@ -32,6 +32,8 @@ var loadLayoutDialog = {
         $('#desc').respondEdit();
 
         $('#LoadLayoutDialog').modal('hide');
+
+        $('div.editorMenu a.more').click();
       });
 
     });

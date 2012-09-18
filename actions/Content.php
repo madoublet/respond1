@@ -21,16 +21,6 @@ class Content extends Actions
 	public $Stylesheets;
 	public $Keywords = '';
 	public $Content = '';
-	public $BeginDate = '';
-	public $BeginReadable = '';
-	public $BeginHour = '';
-	public $BeginMinute = '';
-	public $BeginAMPM = '';
-	public $EndDate = '';
-	public $EndReadable = '';
-	public $EndHour = '';
-	public $EndMinute = '';
-	public $EndAMPM = '';
 	public $SiteUrl;
 	public $TypeS;
 	public $IsActive = 0;
@@ -207,9 +197,9 @@ class Content extends Actions
 		$siteUniqId=$this->AuthUser->SiteUniqId;
 		$pageUniqId=$this->GetPostData("PageUniqId");
 		
-		$content = $this->GetPostData("Content");
+		$content = $this->GetPostDataFromTextarea("Content");
 		$pageTypeUniqId=$this->GetPostData("PageTypeUniqId");
-		
+
 		$imageId = $this->GetPostData("ImageId");
 		
 		$imageFileId=-1;
@@ -542,23 +532,27 @@ class Content extends Actions
 	function GetLayout(){
 		$createPage = $this->GetPostData("CreatePage");
 		$siteId = $this->AuthUser->SiteId;
+		$site = Site::GetBySiteId($siteId);
 
-	
 		if($createPage!='-1'){
 			
 			if($createPage=='-2'){ // get home
 				$pageId = Page::GetHome($siteId);
 				$page = Page::GetByPageId($pageId);
-				$content = $page->Content;
 			}
 			else{
 				$page = Page::GetByPageUniqId($createPage);
-				$content = html_entity_decode($page->Content);
 			}
+
+			$content = '';
+			$fragment = 'sites/'.$site->FriendlyId.'/fragments/publish/'.$page->PageUniqId.'.html';
+
+	        if(file_exists($fragment)){
+	          $content = file_get_contents($fragment);
+	        }
 		}
 		
 	
-
 		die($content);
 	}
 
