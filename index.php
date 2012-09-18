@@ -77,7 +77,7 @@
 	<!-- end login -->
 
 <?php if($demoemail!=''){ ?>
-	<p class="demo"><i class="icon-play-circle icon-white"></i> For a demo, use <b><?php print $demoemail; ?></b> for your email and <b><?php print $demopassword; ?></b> for the password.
+	<p class="demo">To access the demo, use <b><?php print $demoemail; ?></b> for your email and <b><?php print $demopassword; ?></b> for the password.
 <?php } ?>
 
 
