@@ -441,6 +441,9 @@ class Publish
 	// publishes a fragment
 	public static function PublishFragment($siteFriendlyId, $pageUniqId, $status, $content){
 
+		// clean content
+		$content = str_replace( "&nbsp;", '', $content);
+
 		$dir = 'sites/'.$siteFriendlyId.'/fragments/'.$status.'/';
 
 		if(!file_exists($dir)){
