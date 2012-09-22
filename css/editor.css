@@ -212,6 +212,9 @@ div.editorMenu a.plugins{
   background: url('../images/menu-sprite.png') no-repeat -1520px 0;
 }
 
+div.editorMenu a.code{
+  background: url('../images/menu-sprite.png') no-repeat -156`0px 0;
+}
 
 div.editorMenu a:hover{
   background-color: #e1e6ee;
@@ -924,7 +927,6 @@ span.meta input{
 /* begin editableTable */
 div.table{
   width: auto !important;
-  border: 1px solid red;
 }
 
 div.table table{
@@ -970,7 +972,6 @@ div.table table.col-10 td{
 div.table table td{
   margin: 0;
   padding: 5px 8px;
-  border: 1px solid #ccc !important;
 }
 
 div.table table td div{

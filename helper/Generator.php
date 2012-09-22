@@ -269,7 +269,7 @@ class Generator
   }
   
   private static function ParseHTML($siteUniqId, $pageUniqId, $css, $content, $rootloc, $scriptloc, $dataloc, $commonloc, $device, $preview, $curr_url, $abs_url, $pageurl){
-    $html = str_get_html(html_entity_decode($content)); // get in the parser
+    $html = str_get_html($content); // get in the parser
     
     $page = Page::GetByPageUniqId($pageUniqId);
     $site = Site::GetBySiteUniqId($siteUniqId);

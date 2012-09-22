@@ -18,17 +18,17 @@ jQuery.fn.swap = function(b){
 				'<a class="bold" href="#" title="Bold Text (select text first)"></a>' +
 				'<a class="italic" href="#" title="Italicize Text (select text first)"></a>' +
 				'<a class="link" href="#" title="Add Link (select text first)"></a>' +
+				'<a class="code" href="#" title="Add code"></a>' +
 				'<a class="h1" href="#" title="Add Headline"></a>' +
 				'<a class="h2" href="#" title="Add Headline"></a>' +
 				'<a class="h3" href="#" title="Add Headline"></a>' +
 				'<a class="p" href="#" title="Add a Paragraph"></a>' +
 				'<a class="q" href="#" title="Add Block Quote"></a>' +
 				'<a class="ul" href="#" title="Add a List"></a>' +
-				//'<a class="table" href="#" title="Add Table"></a>' +
+				'<a class="table" href="#" title="Add Table"></a>' +
 				'<a class="hr" href="#" title="Add a Horizontal Rule"></a>' +
 				'<a class="img" href="#" title="Add an Image"></span>' +
 				'<a class="slideshow" href="#" title="Add a Slideshow"></a>' +
-			    //'<a class="gallery" href="#" title="Add a Gallery"></a>' +
 				'<a class="map" href="#" title="Add a Map"></a>' +
 				'<a class="twitter" href="#" title="Add your Twitter&reg; feed"></a>' +
 				'<a class="like" href="#" title="Add Facebook&reg; Like button"></a>' +
@@ -99,9 +99,23 @@ jQuery.fn.swap = function(b){
 
 	            var columns = $(node).attr('data-columns');
 
-	            var trs = $(node).find('tr');
+	           	var rows = '';
 
-	            var rows = '';
+	           	var tr = $(node).find('thead tr');
+
+	           	rows += '<thead><tr>';
+
+	           	var ths = $(tr).find('th');
+
+				for(var d=0; d<ths.length; d++){
+					rows += '<th contentEditable="true" class="col-'+(d+1)+'">'+$(ths[d]).html()+'</td>';
+				}
+
+	           	rows += '</tr></thead>';
+
+	            var trs = $(node).find('tbody tr');
+
+	            rows += '<tbody>';
 
 	            for(var t=0; t<trs.length; t++){
 					rows += '<tr class="row-'+(t+1)+'">';
@@ -110,8 +124,11 @@ jQuery.fn.swap = function(b){
 					for(var d=0; d<tds.length; d++){
 						rows += '<td contentEditable="true" class="col-'+(d+1)+'">'+$(tds[d]).html()+'</td>';
 					}
+
 					rows += '</tr>';
 				}
+
+				 rows += '</tbody>';
 	            
 	            var table = '<div id="'+id+'" class="table" data-id="'+id+'" data-cssclass="'+cssclass+'"><table class="'+cssclass+'" data-columns="'+columns+'">'+
                         rows + '</table>' +
@@ -596,6 +613,16 @@ jQuery.fn.swap = function(b){
 	  document.execCommand("Italic", false, null);
 	  return false;
 	});
+
+	// handle italic menu item
+	$(this).find('div.editorMenu a.code').click(function(){
+
+	  var text = global.getSelectedText();
+	  var html = '<code>'+text+'</code>';
+
+	  document.execCommand("insertHTML", false, html);
+	  return false;
+	});
 	
 	// handle link menu item
 	$(this).find('div.editorMenu a.link').click(function(){
@@ -656,11 +683,15 @@ jQuery.fn.swap = function(b){
 
 	  appendHere(
 		  '<div id="'+uniqId+'" class="table" data-id="'+uniqId+'" data-cssclass="">'+
-		  '<table class="col-2" data-columns="2">'+
+		  '<table class="table table-striped table-bordered col-2" data-columns="2">'+
+		  '<thead><tr">'+
+		  '<th contentEditable="true" class="col-1"></th>'+
+		  '<th contentEditable="true" class="col-2"></th>'+
+		  '</tr></thead>'+
 		  '<tbody><tr class="row-1">'+
 		  '<td contentEditable="true" class="col-1"></td>'+
 		  '<td contentEditable="true" class="col-2"></td>'+
-		  '</tbody></tr>'+
+		  '</tr></tbody>'+
 		  '</table>'+
 		  '<span class="addColumn"><a class="addColumn btn" href="#">Add Column</a></span>' +
 		  '<span class="addRow"><a class="addRow btn" href="#">Add Row</a></span><span class="marker">T</span><a class="remove" href="#"></a><a class="config" href="#"></a>'+
@@ -1221,7 +1252,22 @@ jQuery.fn.swap = function(b){
 				newhtml += ' data-columns="'+cols+'"';
 				newhtml += '>';
 
-				var trs = $(table).find('tr');
+				newhtml+='<thead>';
+
+				var tr = $(table).find('thead tr');		
+
+				newhtml += '<tr>';
+				var ths = $(tr).find('th');
+
+				for(var d=0; d<ths.length; d++){
+					newhtml += '<th class="col-'+(d+1)+'">'+$(ths[d]).html()+'</th>';
+				}
+				newhtml += '</tr>';		
+
+				newhtml+='</thead>';
+				newhtml+='<tbody>';
+
+				var trs = $(table).find('tbody tr');
 
 				for(var t=0; t<trs.length; t++){
 					newhtml += '<tr class="row-'+(t+1)+'">';
@@ -1233,7 +1279,7 @@ jQuery.fn.swap = function(b){
 					newhtml += '</tr>';
 				}
 
-				newhtml += '</table>';
+				newhtml += '</tbody></table>';
 			}
 		
 			// handle blockquotes
@@ -1700,7 +1746,13 @@ jQuery.fn.swap = function(b){
 		var trs = table.find('tr');
 
 		for(var x=0; x<trs.length; x++){
-			$(trs[x]).append('<td contentEditable="true"></td>');
+
+			if(trs[x].parentNode.nodeName=='THEAD'){
+				$(trs[x]).append('<th contentEditable="true"></th>');
+			}
+			else{
+				$(trs[x]).append('<td contentEditable="true"></td>');
+			}
 		}
 
 		var n_cols = cols + 1;

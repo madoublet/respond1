@@ -12,6 +12,18 @@ var global = {
 		  else
 		    return decodeURIComponent(results[1].replace(/\+/g, " "));
 	},
+
+	// gets the selected text
+	getSelectedText:function(){
+
+		var text = "";
+	    if(window.getSelection) {
+	        text = window.getSelection().toString();
+	    }else if (document.selection && document.selection.type != "Control") {
+	        text = document.selection.createRange().text;
+	    }
+	    return text;
+	},
 	
 	// saves a selection to add a link
 	saveSelection:function(){
