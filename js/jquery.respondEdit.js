@@ -583,7 +583,7 @@ jQuery.fn.swap = function(b){
 
 		var added = $(temp).next();
 		
-		$(added).find('div, input[type=text], textarea').focus();
+		$(added).find('div, input[type=text], textarea, th[contentEditable=true]:first-child').focus();
 		
 		currnode = $(added).find('div');
 	  }
