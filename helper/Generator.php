@@ -204,6 +204,9 @@ class Generator
     
       if($pageId!=-1){
         $page = Page::GetByPageId($pageId);
+        $content = str_replace('{id}', 'home', $content);
+        $content = str_replace('{type}', 'home', $content);
+        $content = str_replace('{name}', $page->Name, $content);
         $content = str_replace('{description}', $page->Description, $content);
         $content = str_replace('{keywords}', $page->Keywords, $content);
         
