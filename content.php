@@ -29,6 +29,7 @@
 <link type="text/css" href="css/menu.css" rel="stylesheet">
 <link type="text/css" href="css/dialog.css" rel="stylesheet">
 <link type="text/css" href="css/list.css" rel="stylesheet">
+<link type="text/css" href="css/prettify.css" rel="stylesheet">
 <link type="text/css" href="css/imgareaselect/imgareaselect-default.css" rel="stylesheet">
 <link type="text/css" href="css/cupertino/jquery-ui-1.8.1.custom.css" rel="stylesheet">
 
@@ -63,7 +64,7 @@
       print '<div class="block row-fluid"><div class="col span12"><h1>'.strip_tags(html_entity_decode($p->Name)).'</h1><p>'.strip_tags(html_entity_decode($p->Description)).'</p></div></div>';
     } 
     else{
-      print html_entity_decode($p->Content);
+      print $p->Content;
     }
   ?>  
   </div>
@@ -79,7 +80,6 @@
   <iframe id="preview" src=""></iframe>
 </div>  
       
-<input id="IsFeatured" type="hidden" value="<?php print $p->Page->IsFeatured; ?>">
 <input id="IsActive" type="hidden" value="<?php print $p->Page->IsActive; ?>">
 
 <div id="actions" class="container-fluid">
@@ -813,6 +813,34 @@
 </div>
 <!-- /.modal -->
 
+<div class="modal hide" id="CodeBlockDialog">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">x</button>
+    <h3>Add Code Block</h3>
+  </div>
+  <!-- /.modal-header -->
+
+  <div class="modal-body">
+
+    <form class="form-horizontal">
+
+        <p>Paste your code below:</p>
+      
+        <textarea id="Code" style="height: 300px; width: 100%; margin-right: 10px; box-sizing: border-box;"></textarea>
+
+    </form>
+
+  </div>
+  <!-- /.modal-body -->
+
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+    <input id="AddCode" class="btn btn-primary" type="button" value="Add Code Block">
+  </div>
+  <!-- /.modal-footer -->
+
+</div>
+<!-- /.modal -->
 
 
 <div id="overlay"></div>
@@ -836,9 +864,10 @@
 <script type="text/javascript" src="js/pluginsDialog.js"></script>
 <script type="text/javascript" src="js/configPluginsDialog.js"></script>
 <script type="text/javascript" src="js/pageSettingsDialog.js"></script>
+<script type="text/javascript" src="js/codeBlockDialog.js"></script>
+<script type="text/javascript" src="js/prettify.js"></script>
 <script type="text/javascript" src="js/content.js"></script>
 <script type="text/javascript" src="js/imagesDialog.js"></script>
 <script type="text/javascript" src="js/jquery.paste.js"></script>
 <script type="text/javascript" src="js/jquery.imgareaselect.min.js"></script>
-
 </html>

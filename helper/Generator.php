@@ -272,8 +272,10 @@ class Generator
   }
   
   private static function ParseHTML($siteUniqId, $pageUniqId, $css, $content, $rootloc, $scriptloc, $dataloc, $commonloc, $device, $preview, $curr_url, $abs_url, $pageurl){
-    $html = str_get_html($content); // get in the parser
     
+    //$html = str_get_html($content); // get in the parser
+    $html = str_get_html($content, true, true, DEFAULT_TARGET_CHARSET, false, DEFAULT_BR_TEXT);
+
     $page = Page::GetByPageUniqId($pageUniqId);
     $site = Site::GetBySiteUniqId($siteUniqId);
     $mapcount = 0;
@@ -297,6 +299,7 @@ class Generator
         if($name=='styles'){
           $el->outertext = '<link href="'.$css.'" type="text/css" rel="stylesheet" media="screen">'.
                    '<link href="'.$rootloc.'css/bootstrap.min.css" type="text/css" rel="stylesheet" media="screen">'.
+                   '<link href="'.$rootloc.'css/prettify.css" type="text/css" rel="stylesheet" media="screen">'.
                    '<link href="'.$rootloc.'css/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" media="screen">';
         }
         else if($name=='header'){

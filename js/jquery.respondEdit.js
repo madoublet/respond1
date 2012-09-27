@@ -38,7 +38,8 @@ jQuery.fn.swap = function(b){
 				'<a class="list" href="#" title="Add a list of pages"></span>' +
 				'<a class="file" href="#" title="Add a File"></a>' +
 				'<a class="form" href="#" title="Add a Form"></a>' +
-				'<a class="html" href="#" title="Add HTML"></a>';
+				'<a class="html" href="#" title="Add HTML"></a>' + 
+				'<a class="syntax" href="#" title="Add Code Block"></a>';
 
    	menu += '<a class="plugins" href="#" title="Plugins"></a>';
    	menu += '<a class="settings" href="#" title="Page Settings"></a>';
@@ -213,6 +214,17 @@ jQuery.fn.swap = function(b){
 		  
 		  		response+= '<div id="'+id+'" class="h3" data-id="'+id+'" data-cssclass="'+cssclass+'">'+
 					'<div contentEditable="true">' + $(node).html() + '</div><span class="marker">H3</span><a class="remove" href="#"></a><a class="config" href="#"></a>'+
+					'</div>';
+		  	}
+
+		  	if(node.nodeName=='PRE'){
+				var id = $(node).attr('id');
+				if(id==undefined || id=='')id='syntax-'+parseInt(new Date().getTime() / 1000);
+				
+				response+= '<div id="'+id+'" class="syntax" data-id="'+id+'" data-cssclass="prettyprint linenums pre-scrollable">'+
+					'<pre class="prettyprint linenums pre-scrollable">' + $(node).html() + '</pre>' +
+					'<pre class="non-pretty">' + $(node).html() + '</pre>' +
+					'<span class="marker"></span><a class="remove" href="#"></a>'+
 					'</div>';
 		  	}
 		  
@@ -614,13 +626,21 @@ jQuery.fn.swap = function(b){
 	  return false;
 	});
 
-	// handle italic menu item
+	// handle code menu item
 	$(this).find('div.editorMenu a.code').click(function(){
 
 	  var text = global.getSelectedText();
 	  var html = '<code>'+text+'</code>';
 
 	  document.execCommand("insertHTML", false, html);
+	  return false;
+	});
+
+	// handle syntax menu item
+	$(this).find('div.editorMenu a.syntax').click(function(){
+
+	  codeBlockDialog.show();
+
 	  return false;
 	});
 	
@@ -1399,6 +1419,16 @@ jQuery.fn.swap = function(b){
 				newhtml += '<h3 id="'+id+'"';
 				if(cssclass!='')newhtml += ' class="'+cssclass+'"';
 				newhtml += '>' + h + '</h3>';
+			}
+
+			// syntax
+			if($(divs[x]).hasClass('syntax')){
+				var id = $(divs[x]).attr('data-id');
+				if(id==undefined || id=='')id=parseInt(new Date().getTime() / 1000);
+
+				var h = jQuery.trim($(divs[x]).find('pre.non-pretty').html());
+
+				newhtml += '<pre id="'+id+'" class="prettyprint linenums pre-scrollable">' + h + '</pre>';
 			}
 		
 			// handle images

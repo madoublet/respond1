@@ -213,7 +213,11 @@ div.editorMenu a.plugins{
 }
 
 div.editorMenu a.code{
-  background: url('../images/menu-sprite.png') no-repeat -156`0px 0;
+  background: url('../images/menu-sprite.png') no-repeat -1560px 0;
+}
+
+div.editorMenu a.syntax{
+  background: url('../images/menu-sprite.png') no-repeat -1600px 0;
 }
 
 div.editorMenu a:hover{
@@ -466,6 +470,10 @@ div.block a.up:hover, div.block a.down:hover{
  background-color: #888;
 }
 
+pre.non-pretty{
+  display: none;
+}
+
 /* begin markers */
 div.block div span.marker, div.block div span.marker-field{
   position: absolute;
@@ -596,6 +604,11 @@ div.block div.table span.marker{
 div.block div.plugin span.marker{
   border: none !important;
   background: #f0f0f0 url('../images/menu-sprite.png') no-repeat -629px -40px;
+}
+
+div.block div.syntax span.marker{
+  border: none !important;
+  background: #f0f0f0 url('../images/menu-sprite.png') no-repeat -654px -40px;
 }
 
 div.date div{

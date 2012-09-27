@@ -241,7 +241,7 @@ class Content extends Actions
 	
 	function SaveDraft(){
 		$pageUniqId=$this->GetPostData("PageUniqId");
-		$draft=$this->GetPostData("Draft");
+		$draft=$this->GetPostDataFromTextarea("Draft");
 		
 		$page = Page::GetByPageUniqId($pageUniqId);
 		$site = Site::GetBySiteId($page->SiteId);

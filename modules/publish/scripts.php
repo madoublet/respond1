@@ -16,4 +16,5 @@
 <script type="text/javascript" src="<?php print $scriptloc; ?>jquery.respondList-1.0.1.js"></script>
 <script type="text/javascript" src="<?php print $scriptloc; ?>messages.js"></script>
 <script type="text/javascript" src="<?php print $scriptloc; ?>global.js"></script>
+<script type="text/javascript" src="<?php print $scriptloc; ?>prettify.js"></script>
 

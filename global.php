@@ -3,7 +3,7 @@
 	$sa = 'admin@respondcms.com'; 
 
 	// passcode to create a site (leave blank to not require a passcode)
-	$passcode = 'passcode'; 
+	$passcode = 'iloverespond'; 
 
 	// email and password of the demo user that appears on the login page (you still need to create a demo user)
 	$demoemail = 'demo@respondcms.com';

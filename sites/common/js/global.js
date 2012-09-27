@@ -24,6 +24,8 @@ var global = {
 		for(var x=0; x<lists.length; x++){
 			$(lists[x]).respondList();
 		}
+
+		prettyPrint();
 	}
 }
 

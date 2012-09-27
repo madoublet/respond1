@@ -12,6 +12,8 @@ var content = {
 
     $('#desc').respondEdit();
 
+    prettyPrint();
+
     // handle edit link
     $('#newImage').click(function(){
       var moduleId = $('#moduleId').val();
