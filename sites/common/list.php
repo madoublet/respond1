@@ -96,7 +96,7 @@
     else{
 
       // begin post, name and link
-      $l_html = $l_html.'<div class="post"><h2><a href="'.$rootloc.$item['Url'].'">'.$item['Name'].'</a></h2>';
+      $l_html = $l_html.'<div class="post"><h1><a href="'.$rootloc.$item['Url'].'">'.$item['Name'].'</a></h1>';
 
       // content
       $l_html = $l_html.html_entity_decode($item['Content']);

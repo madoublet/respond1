@@ -49,9 +49,16 @@
 		$display = Utilities::GetQueryString('display');
 		$pageTypeUniqId = Utilities::GetQueryString('pageTypeUniqId');
 		$pageSize = Utilities::GetQueryString('pageSize');
-		$orderBy = Utilities::GetQueryString('orderBy').' ASC';
+		$orderBy = Utilities::GetQueryString('orderBy');
 		$page = Utilities::GetQueryString('page');
 		$rootloc = Utilities::GetQueryString('rootloc');
+
+		if($orderBy=='Created'){
+			$orderBy = $orderBy.' DESC';
+		}
+		else{
+			$orderBy = $orderBy.' ASC';
+		}
 
 		if($pageSize==''){
 			$pageSize = 10;

@@ -474,9 +474,7 @@
           <div class="controls">
              <select id="listOrderBy">
                 <option value="Name">Name</option>
-                <option value="Created">Date Created</option>
-                <option value="BeginDate">Begin Date</option>
-                <option value="EndDate">End Date</option>
+                <option value="Created">Date Created (newest first)</option>
               </select>
           </div>
         </div>
