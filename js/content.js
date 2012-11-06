@@ -319,10 +319,9 @@ var content = {
     });
     
     $('#AddField').click(function(){
-      
+
       var fieldType = $('#AddFieldType').val();
       var required = $('#AddRequired').val();
-      //var mapping = $('#AddMapping').val();
       var fieldName = $('#AddFieldName').val().trim();
       var options = $('#AddOptions').val();
       var id = fieldName.toLowerCase();
@@ -332,12 +331,7 @@ var content = {
       
       var html = '<span class="field-container">';
       html += '<div class="control-group" data-type="'+ fieldType + '"';
-      
-      /*
-      if(mapping!=''){
-        html += ' data-mapping="' + mapping + '"';
-      }*/
-      
+    
       if(required=='yes'){
         html += ' data-required="true"';
       }
@@ -402,7 +396,12 @@ var content = {
       
       var editor = $('#desc');
 
-      $(editor).find('div#'+formId+' span.field-container:last-child').after(html);
+      if($('div#'+formId+' span.field-container:last-child').get(0)){
+        $(editor).find('div#'+formId+' span.field-container:last-child').after(html);
+      }
+      else{
+        $(editor).find('div#'+formId+' div').html(html);
+      }
       
       $(editor).respondHandleEvents();
       
