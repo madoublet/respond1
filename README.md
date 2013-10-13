@@ -1,5 +1,4 @@
 RespondCMS
 ==========
 
-RespondCMS is a responsive content management solution used to build responsive websites.  
-Built using PHP, jQuery, and Bootstrap.  Learn more at respondcms.com.
+This is the old version of Respond.  It will not be maintained going forward.  Please move to Respond2.
